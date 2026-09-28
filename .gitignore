@@ -1,0 +1,47 @@
+# Dependencies and generated output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+logs/
+*.log
+*.tsbuildinfo
+
+# Local configuration and credentials; publish templates only
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+
+# Historical copies and database exports
+backup_*/
+backups/
+*.dump
+*.bak
+*.zip
+*.7z
+
+# Business datasets and generated molecular structures stay local
+/data/*
+!/data/README.md
+/web/public/structures/*
+!/web/public/structures/README.md
+
+# Administration scripts tied to the original machine
+/start-all.ps1
+/stop-all.ps1
+/database/*.ps1
+/#U*.ps1
+/README_#U*.md
+
+# Historical internal planning notes
+/docs/superpowers/
+
+# Editor / OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.local

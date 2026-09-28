@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "import:facts": "node scripts/risk-graph.js import-facts --file ../data/extracted_facts.csv",
+    "import:rules": "node scripts/risk-graph.js import-facts --file ../data/risk_rules.tsv",
+    "risk:infer": "node scripts/risk-graph.js infer --rules ../data/risk_rules.tsv",
+    "risk:status": "node scripts/risk-graph.js status"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "neo4j-driver": "^6.0.1"
+  }
+}
