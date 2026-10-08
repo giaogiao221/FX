@@ -1,0 +1,44 @@
+{
+  "package_version": "1.0.0",
+  "source_review_package": "D:\\风险图谱抽取_方案B\\risk_kg_scheme_b_v1\\standard_rule_packages\\gb50089_merged_review_v1",
+  "source_review_manifest_sha256": "c57733af697eb8266b9c659d45702283890b49d34d5fce9b0d842ed26329b07f",
+  "files": {
+    "01_entities.csv": {
+      "sha256": "06ec8774bbe9cf889b7acfda957eafdbbe0f05ad50a62d2565e26b9c6feca7ca",
+      "size": 2071365
+    },
+    "02_relations.csv": {
+      "sha256": "3f1d9ed84fc8ab83f17eda3e771d0c09a87396f08e8f578538c8603d6476b7c3",
+      "size": 339721
+    },
+    "10_accepted_candidates.jsonl": {
+      "sha256": "7d2be58569b54fdc5b5426aa89189650c402b97dff4407c4b87e7c91df54dace",
+      "size": 1676971
+    },
+    "13_review_decisions.csv": {
+      "sha256": "905b616dc02bf2d97ea6b1f2ec0c01adfeecc1d61e1e08a22e455b2a9b405e90",
+      "size": 379071
+    },
+    "14_quality_report.json": {
+      "sha256": "bd78cd891fc5163e0e3496d0d72f8007dba2350325f6516111fafd693aaa4179",
+      "size": 160
+    },
+    "15_integrity_validation.json": {
+      "sha256": "236240b748f764b6d805df791f9dfec6f4885b7854f9ebef8827509f241b767b",
+      "size": 207
+    },
+    "import_standard_rules.cypher": {
+      "sha256": "ae453efc2cf72d6df7bff6b223e7b899a9b3e89c2ae46a124850365b5283a91c",
+      "size": 824
+    }
+  },
+  "integrity": {
+    "accepted_candidate_count": 953,
+    "entity_count": 1616,
+    "relation_count": 3074,
+    "duplicate_entity_ids": [],
+    "duplicate_relation_ids": [],
+    "all_records_accepted": true,
+    "passed": true
+  }
+}

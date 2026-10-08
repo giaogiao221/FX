@@ -1,0 +1,12 @@
+group_id,active,display_name,pair
+PAIR_EQUIPMENT_EQUIPMENT,true,设备-设备,设备-设备
+PAIR_EQUIPMENT_MATERIAL,true,设备-物料,设备-物料
+PAIR_EQUIPMENT_PROCESS,true,设备-工艺,设备-工艺
+PAIR_MATERIAL_EQUIPMENT,true,物料-设备,物料-设备
+PAIR_MATERIAL_MATERIAL,true,物料-物料,物料-物料
+PAIR_MATERIAL_PROCESS,true,物料-工艺,物料-工艺
+PAIR_MATERIAL_SAFETY,true,物料-安全防护,物料-安全防护
+PAIR_PROCESS_EQUIPMENT,true,工艺-设备,工艺-设备
+PAIR_PROCESS_MATERIAL,true,工艺-物料,工艺-物料
+PAIR_PROCESS_PROCESS,true,工艺-工艺,工艺-工艺
+PAIR_SAFETY_SAFETY,true,安全防护-安全防护,安全防护-安全防护

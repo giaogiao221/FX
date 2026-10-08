@@ -102,7 +102,7 @@ dataset_id = HAZOP_DA_H_R_V1
 
 公开代码仓库的运行方式以根目录 `README.md` 为准。后端不会自动读取 `.env`，请使用 `node --env-file=.env index.js` 显式加载，或预先设置系统环境变量。
 
-以下一键脚本仅用于原作者电脑，已从公开仓库排除。原本地目录中，确保 Neo4j 已启动并设置进程环境变量后可运行：
+以下一键脚本已公开，保留原作者电脑的路径与端口假设。在其他电脑上完整复现请优先使用 `REPRODUCE.md` 的 Compose 流程；原本地目录中，确保 Neo4j 已启动并设置进程环境变量后可运行：
 
 ```powershell
 .\start-all.ps1

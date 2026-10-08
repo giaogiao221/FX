@@ -20,4 +20,4 @@ npm run build
 node --test test/*.test.mjs
 ```
 
-`public/structures/` 中的真实结构资源不随源码发布，参见该目录说明。构建产物 `dist/` 和依赖 `node_modules/` 不提交到仓库。
+`public/structures/` 中的 42 个真实结构 SVG 已随源码发布。完整前后端与双库复现见 [REPRODUCE.md](../REPRODUCE.md)。构建产物 `dist/` 和依赖 `node_modules/` 不提交到仓库。

@@ -9,6 +9,13 @@
 *.cypher text eol=lf
 *.svg text eol=lf
 *.ps1 text eol=crlf
+*.sh text eol=lf
+*.dump binary
+# Preserve original CSV/TSV/JSONL bytes for source-package checksums.
+*.csv -text
+*.tsv -text
+*.jsonl -text
+database/imports/** -text
 *.png binary
 *.jpg binary
 *.ico binary

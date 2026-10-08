@@ -1,0 +1,10 @@
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+.git
+backup_*
+docs/superpowers
+database/imports
+database/snapshots
+*.zip

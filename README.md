@@ -4,7 +4,25 @@
 
 基于 React、Express 和 Neo4j 的风险知识图谱可视化项目，包含材料资料、材料风险链、产线 HAZOP、标准规则查询和证据追溯。
 
-本仓库公开应用源码、测试和 Cypher 脚本。业务数据、完整 Neo4j 数据库、生成的分子结构图及原作者电脑的运维脚本不随仓库发布。下载代码后可以运行单元测试、构建前端；完整业务展示需要自行准备相应数据库和数据文件。
+本仓库包含应用源码、业务 CSV/TSV、分子结构映射与 SVG、两套 Neo4j 5.25.1 业务数据库快照、原 Windows 运维脚本和完整恢复流程。数据库快照直接随 Git 下载，无需 Git LFS 或另行索取数据。账号库和真实密码不公开，复现时建立新账号。
+
+## 完整复现（推荐）
+
+安装 Docker Desktop / Docker Engine 和 Compose v2，从仓库根目录执行：
+
+Windows 可以双击 `run-fx.cmd`；首次运行会生成两个随机本地数据库密码并写入 Git 忽略的 `.env`，随后启动整套系统。原电脑已有的 Neo4j 安装也可以通过 `run-local.cmd` 启动。请不要通过双击 `start-all.ps1` 启动：Windows 可能将 `.ps1` 关联到编辑器，或在打开前显示权限错误。
+
+```powershell
+Copy-Item .env.example .env
+# 编辑 .env，设置两套数据库的新本地密码
+docker compose up -d --build --wait --wait-timeout 300
+```
+
+Linux / macOS 使用 `cp .env.example .env`。启动完成后打开 **http://localhost:8080**。首次运行需要联网下载固定版本运行时镜像和 npm 依赖。
+
+**逐步运行说明、数据基线、手动恢复、故障排查：[REPRODUCE.md](REPRODUCE.md)。**
+
+Compose 会自动校验并恢复两套快照，使用独立数据卷，前端通过同源 `/api` 调用后端。默认端口避开原 Windows 开发实例。后续启动保留复现卷中的数据，不重复导入。
 
 ## 功能与架构
 
@@ -29,11 +47,13 @@
 .
 ├── server/                 # API、领域服务、导入和推断脚本、测试
 ├── web/                    # 前端源码、配置、公共资源、测试
-├── database/               # Cypher 校验与修复脚本
-├── data/README.md          # 本地数据约定（不含业务数据）
+├── database/               # 双库快照、原始导入资料、恢复/运维/Cypher 脚本
+├── data/                   # 业务事实、风险规则、结构映射
 ├── docs/                   # 实现说明、结构库说明、发布指南
 ├── MATERIAL_RISK_OPTIMIZATION.md
 ├── LICENSE-NOTICE.md        # 现有许可声明与项目授权状态
+├── compose.yaml            # 双库、后端、前端的完整复现环境
+├── REPRODUCE.md             # 完整复现指南
 └── README.md
 ```
 
@@ -52,7 +72,7 @@ npm ci --prefix web
 
 ### 2. 配置数据库与环境变量
 
-自行启动材料 / HAZOP 数据库和标准规则数据库。在全新克隆的仓库中复制配置示例：
+按 [完整复现指南](REPRODUCE.md) 第 6 节把快照恢复到两个独立数据库并启动。在全新克隆的仓库中复制开发配置示例：
 
 ```powershell
 Copy-Item server/.env.example server/.env
@@ -82,11 +102,11 @@ npm run dev --prefix web
 
 打开终端显示的前端地址。后端本身不会自动读取 `.env`；上述命令通过 Node.js 显式加载。如果选择 `npm start --prefix server`，需要先在该进程的环境中设置全部数据库变量。
 
-### 4. 准备业务数据（完整展示需要）
+### 4. 数据与原始导入资料
 
 参见 [数据约定](data/README.md)、[风险图谱实现说明](docs/risk-graph-implementation.md) 和 [结构库说明](docs/structure-library.md)。
 
-材料服务使用 `PRODUCT_CATALOG_V1`，HAZOP 服务使用 `HAZOP_DA_H_R_V1`；标准规则来自独立实例。本仓库未提供这些完整数据集，也未提供能重建全部业务图谱的一键种子数据。空数据库可能显示空数据或查询错误，不代表已完成数据初始化。
+材料服务使用 `PRODUCT_CATALOG_V1`，HAZOP 服务使用 `HAZOP_DA_H_R_V1`；标准规则来自独立实例。`database/snapshots/material/neo4j.dump` 和 `database/snapshots/standard/neo4j.dump` 保存两套完整业务数据库状态；`database/imports/` 保留原始导入资料。完整复现直接恢复快照，不需要重跑历史导入流程。
 
 `database/*.cypher` 包含诊断、校验及修复操作，并非统一的全新数据库初始化流程。按实际数据结构选用，修复脚本会写入数据库。
 
@@ -99,12 +119,12 @@ node --test server/test/*.test.js web/test/*.test.mjs
 npm run build --prefix web
 ```
 
-现有测试主要覆盖领域逻辑、查询结构和前后端接线，不依赖公开业务数据或正在运行的 Neo4j。前端构建输出到 `web/dist/`，不会提交到仓库。单元测试与构建通过不等同于真实数据库集成测试通过。
+单元测试覆盖领域逻辑、查询结构、前后端接线和快照校验。前端构建输出到 `web/dist/`，不会提交到仓库。真实恢复后的接口基线通过 `node server/scripts/verify-reproduction.js http://localhost:8080/api` 验证。
 
 ## 公开范围与授权
 
-`.gitignore` 排除了依赖目录、构建产物、环境配置、原始业务数据、结构图、历史备份、内部计划和绑定原电脑的 PowerShell 运维脚本；这些文件可以继续保留在原电脑上使用。公开版本采用上面的手动启动方式。
+`.gitignore` 仍排除依赖目录、构建产物、真实环境配置、历史备份及内部计划。业务数据、42 个结构 SVG、两套经校验的业务快照和本机 PowerShell 运维脚本现已纳入仓库。完整复现入口为 Compose；原本机脚本保留原路径假设，其他电脑需调整后使用。
 
-本次整理仅准备代码仓库，不部署在线服务。公开仓库不自动决定项目许可证，现有声明和授权状态见 [LICENSE-NOTICE.md](LICENSE-NOTICE.md)。
+本项目提供本地复现环境，不部署公网服务。公开仓库不自动决定项目许可证，现有声明和授权状态见 [LICENSE-NOTICE.md](LICENSE-NOTICE.md)。
 
 发布步骤见 [docs/PUBLISHING.md](docs/PUBLISHING.md)。

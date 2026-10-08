@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<svg version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='640px' height='420px' viewBox='0 0 640 420'>
+<!-- END OF HEADER -->
+<path class='atom-0' d='M 315.6 181.1
+L 306.8 181.1
+L 306.8 177.9
+L 327.7 177.9
+L 327.7 181.1
+L 319.4 181.1
+L 319.4 206.3
+L 315.6 206.3
+L 315.6 181.1
+' fill='#000000'/>
+<path class='atom-0' d='M 328.9 177.9
+L 332.6 177.9
+L 332.6 181.4
+L 328.9 181.4
+L 328.9 177.9
+M 328.9 185.7
+L 332.6 185.7
+L 332.6 206.3
+L 328.9 206.3
+L 328.9 185.7
+' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+<path class='legend' d='' fill='#000000'/>
+</svg>

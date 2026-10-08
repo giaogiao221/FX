@@ -1,0 +1,86 @@
+﻿id:ID,name,:LABEL,attrs
+Process:氧化剂准备,氧化剂准备,Process,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人""}"
+OperationStep:运输车辆到达工房外,运输车辆到达工房外,OperationStep,"{""完整步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置""}"
+Personnel:2人,2人,Personnel,{}
+Material:氧化剂（AP）,氧化剂（AP）,Material,"{""危险物料"": ""氧化剂（AP）"", ""状态"": ""散状""}"
+HazardFactor:散状,散状,HazardFactor,{}
+HazardFactor:（物料参数库）,（物料参数库）,HazardFactor,{}
+HazardFactor:暴力搬运,暴力搬运,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""人员""}"
+RiskDimension:人员,人员,RiskDimension,{}
+RiskEvent:人员伤害,人员伤害,RiskEvent,{}
+ControlMeasure:手推车设置接地线,手推车设置接地线,ControlMeasure,"{""控制类型"": ""管理控制""}"
+HazardFactor:手推车未设置接地线,手推车未设置接地线,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""人员""}"
+RiskEvent:静电积聚,静电积聚,RiskEvent,{}
+RiskEvent:燃烧,燃烧,RiskEvent,"{""来源"": ""潜在风险列""}"
+RiskEvent:爆炸,爆炸,RiskEvent,"{""来源"": ""潜在风险列""}"
+HazardFactor:未穿戴防护用品,未穿戴防护用品,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""人员""}"
+HazardFactor:摩擦,摩擦,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""物料"", ""危险物料"": ""氧化剂（AP）""}"
+RiskDimension:物料,物料,RiskDimension,{}
+HazardFactor:撞击,撞击,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""物料"", ""危险物料"": ""氧化剂（AP）""}"
+HazardFactor:静电,静电,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""物料"", ""危险物料"": ""氧化剂（AP）""}"
+HazardFactor:定时检查温湿度_采用自动温湿度控制系统,定时检查温湿度/采用自动温湿度控制系统,HazardFactor,"{""工序"": ""氧化剂准备"", ""操作步骤"": ""运输车辆到达工房外，打开车门准备卸料，上料岗位人员将药桶搬运至工房外，使用手推车推至暂存位置"", ""操作行为"": ""搬，推"", ""操作人数"": ""2人"", ""风险维度"": ""湿度过低"", ""危险物料"": ""氧化剂（AP）""}"
+RiskDimension:湿度过低,湿度过低,RiskDimension,{}
+Process:危险场所清扫,危险场所清扫,Process,{}
+ControlMeasure:检修前清扫,检修前清扫,ControlMeasure,"{""控制类型"": ""清洁去污""}"
+RiskEvent:机械伤害,机械伤害,RiskEvent,{}
+EmergencyAction:停止机械运转,停止机械运转,EmergencyAction,"{""动作类型"": ""应急处置""}"
+RiskEvent:触电,触电,RiskEvent,{}
+EmergencyAction:切断电源,切断电源,EmergencyAction,"{""动作类型"": ""应急处置""}"
+EmergencyAction:脱离电源,脱离电源,EmergencyAction,"{""动作类型"": ""应急处置""}"
+EmergencyAction:人工呼吸,人工呼吸,EmergencyAction,"{""动作类型"": ""应急处置""}"
+RiskEvent:爆炸事故,爆炸事故,RiskEvent,{}
+EmergencyAction:紧急避险,紧急避险,EmergencyAction,"{""动作类型"": ""应急处置""}"
+Process:动火动焊作业,动火动焊作业,Process,{}
+ManagementRule:动火证,动火证,ManagementRule,"{""许可类型"": ""特许作业""}"
+ControlMeasure:清洗动火部件,清洗动火部件,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:现场安全监护,现场安全监护,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:作业后复查,作业后复查,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+Process:受限空间作业,受限空间作业,Process,{}
+ManagementRule:受限空间安全作业证,受限空间安全作业证,ManagementRule,"{""许可类型"": ""特许作业""}"
+ControlMeasure:气体检测,气体检测,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:有效隔离,有效隔离,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:断电上锁挂牌,断电上锁挂牌,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:专人监护,专人监护,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+ControlMeasure:作业后共同检查,作业后共同检查,ControlMeasure,"{""控制类型"": ""特许作业控制""}"
+Material:多孔粒状硝酸铵,多孔粒状硝酸铵,Material,{}
+Material:酸类物质,酸类物质,Material,{}
+Material:硝酸铵,硝酸铵,Material,{}
+Process:生产操作,生产操作,Process,"{""风险维度"": ""人员操作"", ""作业内容"": ""生产操作""}"
+HazardFactor:对潜在风险认识不足,对潜在风险认识不足,HazardFactor,"{""风险维度"": ""人员操作"", ""原始危险因素"": ""对潜在风险认识不足"", ""作业内容"": ""生产操作""}"
+RiskEvent:事故发生,事故发生,RiskEvent,"{""来源"": ""潜在风险列""}"
+HazardFactor:误操作,误操作,HazardFactor,"{""风险维度"": ""人员操作"", ""原始危险因素"": ""误操作"", ""作业内容"": ""生产操作""}"
+Process:混合,混合,Process,"{""风险维度"": ""过程"", ""作业内容"": ""系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合""}"
+Material:柴油,柴油,Material,"{""来源"": ""作业内容""}"
+Equipment:混料螺旋,混料螺旋,Equipment,{}
+HazardFactor:设备故障物料受到强烈摩擦、撞击、或静电火花作用,设备故障物料受到强烈摩擦、撞击、或静电火花作用,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""设备故障物料受到强烈摩擦、撞击、或静电火花作用"", ""作业内容"": ""人工套袋，包装机自动夹袋、自动下料计量，当物料达到设定重量后卸袋、缝包""}"
+ControlMeasure:按设备管理规程进行保养、检修，严禁设备带病运行,按设备管理规程进行保养、检修，严禁设备带病运行,ControlMeasure,"{""控制类型"": ""设备/系统维护""}"
+ControlMeasure:每月定期对自动控制系统有效性进行安全性验证,每月定期对自动控制系统有效性进行安全性验证,ControlMeasure,"{""控制类型"": ""设备/系统维护""}"
+HazardFactor:设备未定期检查,设备未定期检查,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""设备未定期检查"", ""作业内容"": ""系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合""}"
+HazardFactor:有零件落入设备内,有零件落入设备内,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""有零件落入设备内"", ""作业内容"": ""系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合""}"
+HazardFactor:自动控制系统故障,自动控制系统故障,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""自动控制系统故障"", ""作业内容"": ""系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合""}"
+HazardFactor:停机并报警功能失效,停机并报警功能失效,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""停机并报警功能失效"", ""作业内容"": ""系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合""}"
+Process:包装,包装,Process,"{""关联章节"": ""三、 本规程解释权限归属安全技术部。""}"
+Equipment:包装机,包装机,Equipment,{}
+ControlMeasure:严禁设备在运转过程中，处理任何机械故障,严禁设备在运转过程中，处理任何机械故障,ControlMeasure,"{""控制类型"": ""管理控制""}"
+ControlMeasure:每月进行安全联锁联控系统有效性验证,每月进行安全联锁联控系统有效性验证,ControlMeasure,"{""控制类型"": ""设备/系统维护""}"
+HazardFactor:联锁联控系统故障，故障提示与停机报警功能失效,联锁联控系统故障，故障提示与停机报警功能失效,HazardFactor,"{""风险维度"": ""过程"", ""原始危险因素"": ""联锁联控系统故障，故障提示与停机报警功能失效"", ""作业内容"": ""人工套袋，包装机自动夹袋、自动下料计量，当物料达到设定重量后卸袋、缝包""}"
+SafetyFacility:生产线安全联锁联控系统,生产线安全联锁联控系统,SafetyFacility,{}
+ControlMeasure:报警,报警,ControlMeasure,"{""控制类型"": ""联锁联控""}"
+Process:危险品生产工房,危险品生产工房,Process,{}
+ManagementRule:定员定量管理,定员定量管理,ManagementRule,"{""控制类型"": ""人员与存量控制""}"
+MonitorVariable:报警状态,报警状态,MonitorVariable,"{""来源参数"": ""包装 人工套袋，包装机自动夹袋、自动下料计量，当物料达到设定重量后卸袋、缝包 人工套袋，包装机自动夹袋、自动下料"", ""参数类型"": ""alarm_threshold""}"
+MonitorVariable:停机状态,停机状态,MonitorVariable,"{""来源参数"": ""（"", ""参数类型"": ""shutdown_threshold""}"
+Process:<RESTRICTED_VALUE>.<RESTRICTED_VALUE>系统设置了故障保护、紧急停机、缺料故障提示、和操作故障提示四种安全保护,<RESTRICTED_VALUE>.<RESTRICTED_VALUE>系统设置了故障保护、紧急停机、缺料故障提示、和操作故障提示四种安全保护,Process,"{""关联章节"": ""<RESTRICTED_VALUE>.<RESTRICTED_VALUE>系统设置了故障保护、紧急停机、缺料故障提示、和操作故障提示四种安全保护。""}"
+Process:<RESTRICTED_VALUE>发生爆炸,<RESTRICTED_VALUE>发生爆炸,Process,"{""关联章节"": ""<RESTRICTED_VALUE>发生爆炸""}"
+MonitorVariable:工艺参数状态,工艺参数状态,MonitorVariable,"{""来源参数"": ""含量要求(%)"", ""参数类型"": ""process_or_quality_parameter""}"
+Process:<RESTRICTED_VALUE>.<RESTRICTED_VALUE>作业前检查、处理内容,<RESTRICTED_VALUE>.<RESTRICTED_VALUE>作业前检查、处理内容,Process,"{""关联章节"": ""<RESTRICTED_VALUE>.<RESTRICTED_VALUE>作业前检查、处理内容：""}"
+Process:<RESTRICTED_VALUE>产能：<RESTRICTED_VALUE>_h,<RESTRICTED_VALUE>产能：<RESTRICTED_VALUE>/h,Process,"{""关联章节"": ""<RESTRICTED_VALUE>产能：<RESTRICTED_VALUE>/h""}"
+Parameter:定量频率：（,定量频率：（,Parameter,"{""参数类型"": ""flow_parameter"", ""敏感等级"": ""restricted"", ""数值策略"": ""exact_value_not_exported; bind from controlled_parameter_store or telemetry_state""}"
+MonitorVariable:流量状态,流量状态,MonitorVariable,"{""来源参数"": ""定量频率：（"", ""参数类型"": ""flow_parameter""}"
+Process:油相,油相,Process,"{""关联章节"": ""三、 本规程解释权限归属安全技术部。""}"
+Parameter:柴油柴油,柴油柴油,Parameter,"{""参数类型"": ""temperature_parameter"", ""敏感等级"": ""restricted"", ""数值策略"": ""exact_value_not_exported; bind from controlled_parameter_store or telemetry_state""}"
+MonitorVariable:温度状态,温度状态,MonitorVariable,"{""来源参数"": ""柴油 柴油"", ""参数类型"": ""temperature_parameter""}"
+Process:本规程解释权限归属安全技术部,本规程解释权限归属安全技术部,Process,"{""关联章节"": ""三、 本规程解释权限归属安全技术部。""}"
+Parameter:混合系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合系统自动按配方要求将多孔粒状硝酸铵和柴,混合系统自动按配方要求将多孔粒状硝酸铵和柴油送入混料螺旋内进行充分混合系统自动按配方要求将多孔粒状硝酸铵和柴,Parameter,"{""参数类型"": ""alarm_threshold"", ""敏感等级"": ""restricted"", ""数值策略"": ""exact_value_not_exported; bind from controlled_parameter_store or telemetry_state""}"
+Process:成品,成品,Process,"{""关联章节"": ""<RESTRICTED_VALUE>| 成品转运站台 | <RESTRICTED_VALUE>| 搬运 | <RESTRICTED_VALUE>| <RESTRICTED_VALUE>| <RESTRICTED_VALUE>""}"
+Parameter:含量要求(%),含量要求(%),Parameter,"{""参数类型"": ""process_or_quality_parameter"", ""敏感等级"": ""restricted"", ""数值策略"": ""exact_value_not_exported; bind from controlled_parameter_store or telemetry_state""}"

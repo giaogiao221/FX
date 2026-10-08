@@ -1,0 +1,2 @@
+﻿review_id,source_row_id,issue_type,severity,detail,source_doc,table_row,raw_text
+REVHF_fa9bed37e9691b218b00,SRCHF_45cafb09d5a5772e2380,missing_release_factor,medium,失效模式“操作衔接错误”未记录导致危险源释放的因素。,非密-第二类危险源分析.docx,8,1.1 | 人员操作 | 操作衔接错误 | 

@@ -1,15 +1,14 @@
 # 发布代码仓库
 
-仓库根目录是 `kg-app`。公开的是源码、测试、说明和 Cypher 脚本，不包含完整运行数据或线上部署。
+仓库根目录是 `kg-app`。公开源码、测试、运行说明、业务数据、分子结构资源、两套业务数据库快照、原始导入资料及本机运维脚本，支持本地完整复现，不部署公网服务。
 
 ## 已排除的本地内容
 
 - 各层级 `node_modules`、`dist`、日志和缓存。
 - `.env`、`.env.*`（保留 `.env.example`）、本地 npm 配置及密钥文件。
-- `data/` 的业务文件和 `web/public/structures/` 的生成资源；两个目录仅保留说明。
-- `backup_*`、数据库 dump、压缩包和旧补丁。
+- `backup_*`、临时数据库 dump、压缩包和旧补丁。仅 `database/snapshots/material/neo4j.dump` 与 `standard/neo4j.dump` 两个正式业务快照允许入库。
 - `docs/superpowers/` 内部开发记录和编码异常的历史说明文件。
-- 根目录 `start-all.ps1`、`stop-all.ps1` 和 `database/*.ps1`：这些是原电脑的运维工具，含本机路径及实例假设，继续留在本地，不进入公开仓库。可移植的启动命令见根目录 README。
+- 原 Neo4j `system` 数据库、认证文件、运行目录、日志和真实密码不进入仓库。复现使用新建账号。
 
 不要使用 `git add -f` 强行加入上述内容。`.gitignore` 不会清除已提交的文件或历史秘密；未来若误提交敏感信息，需要单独处理历史和凭据。
 
@@ -20,12 +19,12 @@
 ```powershell
 git status --short
 git diff --cached --stat
-git diff --cached --check
+git -c core.whitespace=cr-at-eol diff --cached --check -- . ':(exclude)database/imports/**'
 node --test server/test/*.test.js web/test/*.test.mjs
 npm run build --prefix web
 ```
 
-待提交清单中应有 `server/.env.example`、`web/.env.example`，不应有真实 `.env`、业务 CSV/TSV/JSON、结构 SVG、备份或依赖目录。
+待提交清单应包含根目录和前后端 `.env.example`、业务 CSV/TSV/JSON、结构 SVG、两个正式快照及校验文件，不应有真实 `.env`、账号库、历史备份或依赖目录。`database/imports/` 保留来源 CSV/JSONL 的原始字节以匹配其 SHA-256 manifest，少数来源记录末尾本来含空格，因此上面的通用排版检查不改写该目录。发布前执行 `node server/scripts/verify-snapshots.js`，并在空 Compose 数据卷上按 `REPRODUCE.md` 验证恢复及接口基线。
 
 本次整理没有替权利人选择统一开源许可证。发布前阅读 `LICENSE-NOTICE.md`，按实际权属决定是否添加 `LICENSE`；公开可见与授予统一开源许可是不同事项。
 

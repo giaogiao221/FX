@@ -1,0 +1,8 @@
+{
+  "accepted_candidate_count": 953,
+  "candidate_type_counts": {
+    "requirement": 688,
+    "numeric_constraint": 265
+  },
+  "integrity_passed": true
+}

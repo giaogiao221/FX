@@ -1,0 +1,83 @@
+{
+  "material-risk/status": {
+    "available": true,
+    "datasetId": "PRODUCT_CATALOG_V1",
+    "materialCount": 224,
+    "materialsWithRiskChains": 77,
+    "factChainCount": 307,
+    "inferredChainCount": 307,
+    "ruleCount": 6,
+    "configuredRuleCount": 6,
+    "formalHazardClassStats": [
+      {
+        "name": "1.1",
+        "materialCount": 29
+      }
+    ],
+    "formallyClassifiedMaterialCount": 29,
+    "unclassifiedMaterialCount": 195,
+    "riskCharacteristicStats": [
+      {
+        "riskType": "friction",
+        "name": "摩擦感度风险",
+        "materialCount": 36,
+        "chainCount": 36
+      },
+      {
+        "riskType": "impact",
+        "name": "撞击/冲击感度风险",
+        "materialCount": 36,
+        "chainCount": 42
+      },
+      {
+        "riskType": "electrostatic",
+        "name": "静电感度风险",
+        "materialCount": 5,
+        "chainCount": 5
+      },
+      {
+        "riskType": "flame",
+        "name": "火焰感度风险",
+        "materialCount": 10,
+        "chainCount": 11
+      },
+      {
+        "riskType": "thermal",
+        "name": "爆发点/热分解风险",
+        "materialCount": 15,
+        "chainCount": 15
+      },
+      {
+        "riskType": "stability",
+        "name": "热稳定性边界风险",
+        "materialCount": 65,
+        "chainCount": 198
+      }
+    ],
+    "classificationNote": "材料风险特征由属性规则识别，用于风险通道展示，不等同于法定危险货物分类。"
+  },
+  "hazop/status": {
+    "available": true,
+    "datasetId": "HAZOP_DA_H_R_V1",
+    "nodeCount": 1670,
+    "lineCount": 3,
+    "processCount": 12,
+    "scenarioCount": 307,
+    "nodesWithoutId": 0,
+    "nextProcessCount": 9,
+    "alignmentCount": 6
+  },
+  "standard-rules/status": {
+    "available": true,
+    "ruleCount": 5123,
+    "ruleTypes": [
+      "ManagementRequirement",
+      "InspectionRequirement"
+    ]
+  },
+  "structure/status": {
+    "available": true,
+    "count": 132,
+    "error": ""
+  }
+}

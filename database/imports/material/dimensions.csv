@@ -1,0 +1,7 @@
+dimension_id,active,name
+DIM_EQUIPMENT,true,设备
+DIM_LINE,true,产线
+DIM_MATERIAL,true,物料
+DIM_MONITORING,true,监测
+DIM_PROCESS,true,工艺
+DIM_SAFETY,true,安全防护

@@ -1,0 +1,3 @@
+domain_id,active,domain_type,name
+DOMAIN_SAFETY_GENERAL,true,general,通用安全防护
+DOMAIN_SDF,true,product,SDF
